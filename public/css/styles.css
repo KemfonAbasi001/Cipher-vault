@@ -20,7 +20,7 @@ p,h1{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 30px;
+  gap: 13px;
   text-align: center;
   /* color: white; */
 }
@@ -38,11 +38,11 @@ p,h1{
   align-items: center;
   /* background-color: gold; */
   flex-direction: column;
-  /* gap: 3px; */
+  gap: 10px;
 }
 
 .logo-text{
-  color: white;
+  color: #AFAFAF;
   font-weight: 600;
   font-size: 14px;
 }
@@ -51,6 +51,11 @@ p,h1{
   color: white;
   /* line-height: 50px; */
   font-size: 45px;
+  word-spacing: 10px;
+}
+
+.bold-txt span{
+  color: #AFAFAF;
 }
 
 .means{
@@ -67,16 +72,33 @@ p,h1{
 
 .txt{
   color: white;
-  font-size: 17px;
+  font-size: 15px;
   line-height: 20px;
-  letter-spacing: 1px;
+  letter-spacing: .7px;
 }
 
+.logo-div .lucide{
+  width: 20px;
+  height: 20px;
+}
+
+.logo-divs{
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 8px 10px; */
+  border-radius: 100%;
+  background-color: transparent;
+  border: .6px solid #AFAFAF;
+}
 
 .btn-section{
   /* background-color: lime; */
   display: flex;
   gap: 40px;
+  margin-top: 15px;
 }
 
 a{
@@ -89,13 +111,17 @@ a{
   color: black;
   font-size: 14px;
   font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
   border-radius: 6px;
 }
 
 #btn-one{
   background-color: black;
   color: white;
-  border: 1px solid white;
+  border: .6px solid white;
 }
 
 
@@ -456,21 +482,21 @@ svg{
   background-color: black;
   padding: 20px 22px;
   display: flex;
-  gap: 4px;
+  gap: 6px;
   /* justify-content: center; */
   align-items: center;
 }
 
 .logo{
   font-family: "Geist", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: #FFFFFF;
 }
 
 .sidebar-top svg{
-  width: 19px;
-  height: 19px;
+  width: 16px;
+  height: 16px;
   /* fill: #FFFFFF; */
 }
 
@@ -483,6 +509,7 @@ svg{
 }
 
 .sidebar-nav {
+  margin: 10px 0;
   background-color: black;
   /* background-color: #171717; */
   flex: 1;
@@ -490,7 +517,7 @@ svg{
   padding: 0 14px;
   display: flex;
   flex-direction: column;
-  gap: 30px;          /* spaced out so 30 items easily exceeds 200vh */
+  gap: 25px;          /* spaced out so 30 items easily exceeds 200vh */
 }
 
 #act{
@@ -499,45 +526,120 @@ svg{
 }
 
 .sidebar-nav a:hover{
-  background-color: gold;
+  background-color: #404040;
+}
+
+.uniq{
+  font-size: 12px;
+  font-weight: 500;
+  color: #AFAFAF;
+  /* background: red; */
+  padding: 0px 8px;
+}
+
+.lucide-house{
+  width: 17px;
+  height: 17px;
 }
 
 .sidebar-nav a {
   color: white;
   text-decoration: none;
-  padding: 6px 8px;
+  padding: 7px 8px;
   /* background-color: red; */
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   line-height: 20px;
   border-radius: 6px;
   font-family: "Geist", sans-serif;
+  display: flex;
+  gap: 10px;
+  /* justify-content: center; */
+  align-items: center;
 }
 
 .sidebar-bottom {
-  padding: 16px;
+  padding: 14px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  display: flex;
+  gap: 6px;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.tabler-icon{
+  width: 17px;
+  height: 17px;
 }
 
 .main-content {
   flex: 1;
   overflow-y: auto;
-  padding: 24px;
+  padding: 50px 0;
   color: white;
-  background-color: #07070A;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
 }
 
-.main-content p {
-  height: 60px;       /* padding each line out so total height easily exceeds 200vh */
-  font-size: 24px;
+.main-inner{
+  width: 90%;
+  /* padding: 50px 0; */
+  /* height: 80%; */
+  /* background-color: blue; */
+}
+
+.main-header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 
+.comp-main{
+  display: flex;
+  gap: 20px;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.comp-main .lucide-bell{
+  width: 35px;
+  height: 35px;
+}
+
+.sub-main{
+  display: flex;
+  gap: 3px;
+  flex-direction: column;
+}
+
+.sub-main h1{
+  font-size: 1.8rem;
+}
+
+.sub-p-main{
+  color: #AFAFAF;
+}
+
+#input-main{
+    padding: 9px 15px;
+    height: fit-content;
+}
+
+.image-main{
+  height: 35px;
+  width: 55px;
+  border: 1px solid white;
+  border-radius: 100%;
+}
 /* Apply to whichever scrollable element — e.g. .sidebar-nav, .main-content */
 
 /* Width of the scrollbar itself */
 .main-content::-webkit-scrollbar {
-  width: 1px;
+  width: 5px;
 }
 
 /* The track (background channel the thumb slides in) */
@@ -547,14 +649,14 @@ svg{
 
 /* The draggable thumb — NORMAL state */
 .main-content::-webkit-scrollbar-thumb {
-  background-color: brown;   /* your gold */
+  background-color: #404040;   /* your gold */
   border-radius: 12px;
 }
 
 
 /* Width of the scrollbar itself */
 .sidebar-nav::-webkit-scrollbar {
-  width: 1px;
+  width: 5px;
 }
 
 /* The track (background channel the thumb slides in) */
@@ -564,6 +666,36 @@ svg{
 
 /* The draggable thumb — NORMAL state */
 .sidebar-nav::-webkit-scrollbar-thumb {
-  background-color: brown;   /* your gold */
+  background-color: #404040;   /* your gold */
   border-radius: 12px;
+}
+
+
+.img-file{
+  width: 25px;
+  height: 25px;
+  background-color: black;
+  border: .7px solid #AFAFAF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+
+.details{
+  flex-direction: column;
+  display: flex;
+  gap: 3px;
+  color: white;
+}
+
+.details-name{
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.details-email{
+  font-size: 10px;
+  font-weight: 400;
+  color: #AFAFAF;
 }

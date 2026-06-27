@@ -137,6 +137,11 @@ app.post("/register", async (req, res) => {
   const password = req.body.passworddetails;
   const confirmpassword = req.body.userCPassword;
 
+  // let greetings = "Welcome to Cipher Vault, " + lastname;
+  let greetings = "Welcome to Cipher, " + lastname;
+  let nameusers = firstname + " " + lastname;
+  let emailusers = emailadd;
+
   if (password !== confirmpassword) {
     return res.send("Passwords do not match. Please go back and try again.");
   }
@@ -158,7 +163,12 @@ app.post("/register", async (req, res) => {
           "INSERT INTO users (first_name, last_name, email, password) VALUES ($1, $2, $3, $4)",
           [firstname, lastname, emailadd, hash]
         );
-        res.render("secrets.ejs");
+        // res.render("secrets.ejs");
+        res.render("secrets.ejs", {
+          greet: greetings,
+          nameuser: nameusers,
+          emailuser: emailusers,
+        });
       });
     }
   } catch (err) {
@@ -174,6 +184,7 @@ app.post("/login", async (req, res) => {
   const emailadd = req.body.emailaddress;
   const password = req.body.passworddetails;
 
+
   try {
     const result = await db.query("SELECT * FROM users WHERE email = $1", [
       emailadd,
@@ -188,7 +199,16 @@ app.post("/login", async (req, res) => {
           return res.send("Something went wrong. Please try again.");
         }
         if (valid) {
-          res.render("secrets.ejs");
+          let greetings = "Welcome back, " + user.first_name + " 👋";
+          let nameusers = user.first_name + " " + user.last_name;
+          let emailusers = user.email;
+
+          // res.render("secrets.ejs");
+          res.render("secrets.ejs", {
+            greet: greetings,
+            nameuser: nameusers,
+            emailuser: emailusers,
+          });
         } else {
           res.send("Incorrect Password");
         }
@@ -198,8 +218,18 @@ app.post("/login", async (req, res) => {
     }
   } catch (err) {
     console.log(err);
+    res.send("Something went wrong. Please try again.");
   }
 });
+
+
+
+
+
+
+
+
+
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
